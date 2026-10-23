@@ -98,7 +98,7 @@
 
 <header>
   <h1>Privacy Policy — SubWatch</h1>
-  <p>Ultimo aggiornamento: settembre 2026</p>
+  <p>Ultimo aggiornamento: 23/10/2026 · Versione 2.0 (app SubWatch 2.2.0)</p>
 </header>
 
 <main>
@@ -110,8 +110,9 @@
         SubWatch funziona quasi interamente sul tuo dispositivo. I dati che inserisci —
         abbonamenti, costi, cicli di rinnovo, categorie, date di utilizzo e note — <strong>non
         vengono mai inviati a nessun server</strong> e restano solo nella memoria locale
-        dell'app. L'unica eccezione è il controllo automatico degli aggiornamenti, che contatta
-        il server del marketplace senza inviare alcun dato personale (vedi sezione 3).
+        dell'app. La connessione serve solo per <strong>controllare gli aggiornamenti</strong> e,
+        se acquisti Premium, per <strong>attivarlo e rinnovarlo</strong>: l'app invia la chiave e
+        un'impronta del telefono ricavata con un hash, mai i tuoi abbonamenti (sezione 2).
       </p>
     </div>
   </section>
@@ -142,17 +143,56 @@
       nessuna chiamata a server esterni per questa funzione.
     </p>
 
-    <h3>Controllo aggiornamenti (unica connessione di rete dell'app base)</h3>
+    <h3>Notifiche</h3>
     <p>
-      All'avvio, SubWatch contatta <code>marketplace-apps.com</code> per verificare se è
-      disponibile una nuova versione. Questa richiesta non include il tuo nome, email o alcun
-      dato inserito nell'app: viene scambiato solo il numero di versione installato.
+      Gli avvisi prima dei rinnovi sono notifiche locali, programmate e mostrate dal tuo
+      telefono: non passano da nessun server, né nostro né di Google.
     </p>
 
-    <h3>Stato del piano (Free/Premium)</h3>
+    <h3>Controllo aggiornamenti</h3>
     <p>
-      Se attivi il Premium, la chiave di licenza che incolli nell'app viene verificata
-      localmente sul dispositivo e salvata solo lì, per riconoscere il piano attivo.
+      All'avvio, SubWatch chiede a <code>marketplace-apps.com/api/versione/subwatch</code> qual è
+      l'ultima versione e, se ce n'è una nuova, scarica il pacchetto di installazione da
+      <code>files.marketplace-apps.com</code> (Cloudflare R2). Sei tu a confermare
+      l'installazione. Queste richieste non includono nessun dato inserito nell'app: il server
+      vede solo l'indirizzo IP della connessione.
+    </p>
+
+    <h3>Attivazione di Premium sul telefono</h3>
+    <p>
+      La chiave Premium vale al massimo su <strong>2 telefoni</strong>. Per far rispettare questo
+      limite, quando attivi la chiave l'app si collega al nostro server delle licenze
+      (<code>licenze.hubertmontero8514.workers.dev</code>, un servizio Cloudflare Workers gestito da
+      noi) e invia: la <strong>chiave di licenza</strong>, che al suo interno contiene l'indirizzo
+      email dell'acquirente, il piano e la data di scadenza; un'<strong>impronta del
+      telefono</strong>, cioè un codice ricavato con una funzione di hash (SHA-256) dal nome
+      dell'app e dall'identificativo Android del telefono (ANDROID_ID), poi accorciato.
+      <strong>L'identificativo Android non viene mai inviato in chiaro</strong> e l'impronta è
+      diversa per ogni app.
+    </p>
+    <p>
+      La richiesta si ripete in automatico quando l'attivazione va rinnovata, al massimo ogni
+      30 giorni e solo con il telefono connesso. Il server risponde con un'attivazione firmata
+      che l'app verifica sul telefono, anche senza connessione. Il server <strong>non conserva la
+      tua email</strong> né la chiave in chiaro: conserva solo l'hash della chiave, l'impronta del
+      telefono, il piano, la data di attivazione e dell'ultimo rinnovo, l'eventuale data
+      dell'ultimo cambio di telefono (uno ogni 30 giorni) e l'hash delle chiavi bloccate
+      (per esempio dopo un rimborso). La prova gratuita si può attivare una sola volta per
+      telefono. Il pulsante <strong>Disattiva su questo telefono</strong> cancella dal server la
+      riga di quel telefono. L'identificativo Android si legge solo per questo e non è usato
+      per pubblicità, statistiche o profilazione.
+    </p>
+
+    <h3>Versione web</h3>
+    <p>
+      SubWatch si può usare anche dal browser (<code>marketplace-apps.com/subwatch/web</code>).
+      Lì i dati restano <strong>solo nel browser che usi</strong>, non sui nostri server; non ci sono
+      notifiche né aggiornamenti. Un cookie tecnico ricorda che hai letto l'avviso iniziale. Se
+      attivi Premium, la chiave si verifica sul server del marketplace, che apre una
+      <strong>sessione Premium</strong> legata al browser con un cookie tecnico
+      (<code>httpOnly</code>): il server conserva l'hash del codice di sessione, l'hash della
+      chiave, il piano e la scadenza, non la tua email. Massimo <strong>2 sessioni</strong> per
+      chiave; le sessioni scadute si cancellano entro 30 giorni.
     </p>
 
     <p class="muted">
@@ -171,9 +211,15 @@
         <td>Esecuzione del servizio richiesto dall'utente (art. 6.1.b GDPR)</td>
       </tr>
       <tr>
-        <td>Verifica della licenza Premium attivata</td>
-        <td>Legittimo interesse a fornire correttamente il servizio a pagamento
-        (art. 6.1.f GDPR)</td>
+        <td>Generare e inviare la chiave Premium dopo il pagamento; attivare Premium sul
+        telefono e far rispettare il limite di 2 telefoni (o 2 sessioni web) per chiave</td>
+        <td>Esecuzione del contratto (art. 6.1.b GDPR)</td>
+      </tr>
+      <tr>
+        <td>Impedire gli abusi: una prova per telefono, un cambio di telefono ogni 30 giorni,
+        blocco delle chiavi revocate</td>
+        <td>Legittimo interesse a prevenire usi fraudolenti delle licenze, usando solo hash e
+        date (art. 6.1.f GDPR). Puoi opporti (sezione 8)</td>
       </tr>
       <tr>
         <td>Controllo automatico degli aggiornamenti</td>
@@ -190,16 +236,28 @@
       disinstalli l'app stessa. SubWatch non prevede, in questa versione, un backup automatico
       su cloud: la responsabilità di conservare o esportare i propri dati resta dell'utente.
     </p>
+    <p>
+      Sul server delle licenze: le attivazioni Premium restano finché la licenza è in uso e si
+      cancellano subito con <strong>Disattiva su questo telefono</strong>, o comunque dopo 90 giorni
+      senza rinnovo; le attivazioni della prova gratuita 12 mesi; la data dell'ultimo cambio di
+      telefono 60 giorni; gli hash delle chiavi bloccate finché servono.
+    </p>
   </section>
 
   <section>
     <h2>5. Destinatari e trasferimenti</h2>
     <p>
-      Nessun dato inserito nell'app viene condiviso con terzi. Le uniche connessioni di rete
-      dell'app sono: il controllo versione verso <code>marketplace-apps.com</code> (nessun dato
-      personale, vedi sezione 2) e, solo se scegli di attivare il Premium, l'apertura del
-      browser verso la pagina di pagamento PayPal sul marketplace (vedi sezione 7). Nessun dato
-      viene trasferito fuori dallo Spazio Economico Europeo dall'app stessa.
+      Nessun dato inserito nell'app viene condiviso con terzi. Per Premium e gli aggiornamenti
+      ci serviamo di fornitori che trattano i dati per nostro conto (art. 28 GDPR):
+      <strong>Cloudflare</strong> (Stati Uniti: server delle licenze, database delle attivazioni,
+      file degli aggiornamenti), <strong>Vercel</strong> (Stati Uniti: sito marketplace-apps.com e
+      versione web), <strong>Supabase</strong> (database nell'Unione europea, Irlanda: sessioni
+      Premium web), <strong>Resend</strong> (Stati Uniti: email con la chiave). PayPal (Europe)
+      S.à r.l. et Cie, S.C.A. (Lussemburgo) gestisce il pagamento come titolare autonomo.
+      Quando i dati sono trattati fuori dall'Unione europea, il trasferimento si basa sulla
+      decisione di adeguatezza per le aziende aderenti all'EU-U.S. Data Privacy Framework
+      (decisione di esecuzione (UE) 2023/1795, art. 45 GDPR) oppure sulle clausole contrattuali
+      tipo (art. 46 GDPR), come indicato da ciascun fornitore.
     </p>
   </section>
 
@@ -221,8 +279,9 @@
       <a href="https://marketplace-apps.com/subwatch/premium" target="_blank" rel="noopener">marketplace-apps.com/subwatch/premium</a>,
       aperto dall'app nel tuo browser. Non gestiamo né memorizziamo i dati della tua carta o del
       tuo conto: PayPal tratta quei dati secondo la propria informativa privacy. A seguito del
-      pagamento riceverai via email una chiave di attivazione, che l'app verifica localmente sul
-      dispositivo senza contattare alcun server durante l'uso quotidiano.
+      pagamento riceverai via email una chiave di attivazione: quando la incolli, l'app ne
+      controlla la firma sul telefono e poi la attiva sul server delle licenze come descritto
+      nella sezione 2.
     </p>
   </section>
 
