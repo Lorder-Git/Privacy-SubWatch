@@ -98,7 +98,7 @@
 
 <header>
   <h1>Privacy Policy — SubWatch</h1>
-  <p>Ultimo aggiornamento: 21/11/2026 · Versione 2.1 (app SubWatch 2.3.1)</p>
+  <p>Ultimo aggiornamento: 22/11/2026 · Versione 2.2 (app SubWatch 2.3.1)</p>
 </header>
 
 <main>
@@ -150,24 +150,22 @@
 
     <h3>Controllo aggiornamenti</h3>
     <p>
-      All'avvio, SubWatch chiede a <code>marketplace-apps.com/api/versione/subwatch</code> qual è
-      l'ultima versione e, se ce n'è una nuova, scarica il pacchetto passando da <code>marketplace-apps.com/api/scarica/subwatch</code>, che rimanda subito al file su <code>files.marketplace-apps.com</code> (Cloudflare R2).
+      All'avvio, SubWatch controlla, collegandosi ai nostri server, se c'è una nuova versione e, se c'è, scarica il pacchetto dai server del nostro fornitore di archiviazione (Cloudflare).
       È Lei a confermare l'installazione. Queste richieste non includono nessun dato inserito
       nell'app né identificativi del telefono o della licenza.
     </p>
     <p>
-      Il sito non salva l'indirizzo IP né altri dati di queste richieste: tiene solo numeri per giorno, cioè quante volte le app hanno chiesto la versione (sono aperture, non persone) e quanti aggiornamenti sono stati scaricati, per app e versione. Da questi numeri non si può risalire a nessuno. Anche dal server delle licenze ricaviamo solo numeri complessivi per app (telefoni attivati, telefoni collegati negli ultimi 30 giorni, attivazioni e vendite per giorno), senza vedere impronte, chiavi o email. Come per ogni pagina web, i fornitori dell'infrastruttura (Vercel per il sito, Cloudflare per i file) ricevono l'indirizzo IP, il tipo di client (User-Agent) e l'orario della richiesta e li tengono nei loro registri tecnici per i tempi previsti dai loro servizi.
+      Il sito non salva l'indirizzo IP né altri dati di queste richieste: tiene solo numeri per giorno, cioè quante volte le app hanno chiesto la versione (sono aperture, non persone) e quanti aggiornamenti sono stati scaricati, per app e versione. Da questi numeri non si può risalire a nessuno. Anche dal server delle licenze ricaviamo solo numeri complessivi per app (per esempio quante attivazioni e quante vendite), senza vedere impronte, chiavi o email. Come per ogni pagina web, i fornitori dell'infrastruttura (Vercel per il sito, Cloudflare per i file) ricevono l'indirizzo IP, il tipo di client (User-Agent) e l'orario della richiesta e li tengono nei loro registri tecnici per i tempi previsti dai loro servizi.
     </p>
 
     <h3>Attivazione di Premium sul telefono</h3>
     <p>
       La chiave Premium vale al massimo su <strong>2 telefoni</strong>. Per far rispettare questo
       limite, quando attiva la chiave l'app si collega al nostro server delle licenze
-      (<code>licenze.hubertmontero8514.workers.dev</code>, un servizio Cloudflare Workers gestito da
-      noi) e invia: la <strong>chiave di licenza</strong>, che al suo interno contiene l'indirizzo
+      (un servizio su Cloudflare gestito da noi) e invia: la <strong>chiave di licenza</strong>, che al suo interno contiene l'indirizzo
       email dell'acquirente, il piano e la data di scadenza; un'<strong>impronta del
-      telefono</strong>, cioè un codice ricavato con una funzione di hash (SHA-256) dal nome
-      dell'app e dall'identificativo Android del telefono (ANDROID_ID), poi accorciato.
+      telefono</strong>, cioè un codice ricavato con una funzione di hash dal nome
+      dell'app e dall'identificativo Android del telefono, poi accorciato.
       <strong>L'identificativo Android non viene mai inviato in chiaro</strong> e l'impronta è
       diversa per ogni app.
     </p>
@@ -188,13 +186,12 @@
       SubWatch si può usare anche dal browser (<code>marketplace-apps.com/subwatch/web</code>).
       Lì i dati restano <strong>solo nel browser che usa</strong>, non sui nostri server; non ci sono
       notifiche né aggiornamenti. Un cookie tecnico ricorda che ha letto l'avviso iniziale. Se attiva Premium, la chiave si verifica sul server del marketplace, che apre una
-      <strong>sessione Premium</strong> legata al browser con un cookie tecnico
-      (<code>httpOnly</code>): il server conserva l'hash del codice di sessione, l'hash della
+      <strong>sessione Premium</strong> legata al browser con un cookie tecnico: il server conserva l'hash del codice di sessione, l'hash della
       chiave, il piano, la scadenza, l'email contenuta nella chiave e la data in cui la sessione è stata aperta.
       Massimo <strong>2 sessioni</strong> per chiave: aprendone una terza, la più vecchia viene chiusa e cancellata.
     </p>
     <p><strong>Sessione web e recesso.</strong> La data in cui la sessione viene aperta serve anche come prova di quando ha iniziato a usare Premium: se al pagamento ha chiesto di iniziare subito e poi recede entro 14 giorni, tratteniamo solo la parte proporzionale ai giorni trascorsi dall'attivazione (art. 57, comma 3, del Codice del consumo e condizioni di vendita di marketplace-apps.com), e come attivazione nella versione web contiamo la sessione più vecchia che risulta per quella chiave. L'email contenuta nella chiave ci permette di collegare la sessione al suo acquisto. Base giuridica: esecuzione del contratto (art. 6, par. 1, lett. b, GDPR) e legittimo interesse a poter dimostrare quanta parte del servizio è stata fornita (art. 6, par. 1, lett. f). Le sessioni si cancellano 30 giorni dopo la scadenza della licenza (quelle senza scadenza dopo 400 giorni) e subito se la chiave viene bloccata dopo un rimborso per recesso.</p>
-    <p><strong>Conteggio del tempo d'uso.</strong> Mentre la versione web è aperta e la scheda è in primo piano, il browser invia al sito, ogni 20 secondi, un segnale con il nome dell'app, l'etichetta del link social che ha usato per arrivare (se c'è) e un codice casuale creato per quella scheda; quando la scheda non è più visibile, il browser invia un ultimo segnale di pausa. Il segnale non contiene nulla di ciò che fa o scrive nell'app e serve solo a contare quante persone usano la versione web in quel momento e per quanto tempo (per fasce di durata). Il codice è conservato nella memoria di sessione del browser (<code>sessionStorage</code>, voce <code>officina_battito_subwatch</code>), non in un cookie, e si cancella quando chiude la scheda; sul server viene cancellato entro 6 minuti dall'ultimo segnale e restano solo conteggi per giorno, app, social e fascia di durata. L'indirizzo IP serve solo a bloccare le richieste troppo frequenti: resta nella memoria temporanea del server per circa 2 minuti e non viene salvato (come per qualsiasi pagina, Vercel, che ospita il sito, lo vede nei suoi registri tecnici). Base giuridica: legittimo interesse a misurare in forma aggregata l'uso delle versioni web (art. 6, par. 1, lett. f, GDPR); poiché il codice serve solo alle nostre statistiche aggregate, secondo le Linee guida del Garante su cookie e altri strumenti di tracciamento (10 giugno 2021) non è necessario il consenso previsto dall'art. 122 del Codice privacy. Maggiori dettagli nell'<a href="https://marketplace-apps.com/it/privacy">informativa di marketplace-apps.com</a> (punti 3.2 bis e 4).</p>
+    <p><strong>Conteggio del tempo d'uso.</strong> Mentre la versione web è aperta e la scheda è in primo piano, il browser invia al sito, a intervalli regolari, un segnale con il nome dell'app, l'etichetta del link social che ha usato per arrivare (se c'è) e un codice casuale creato per quella scheda; quando la scheda non è più visibile, il browser invia un ultimo segnale di pausa. Il segnale non contiene nulla di ciò che fa o scrive nell'app e serve solo a contare quante persone usano la versione web in quel momento e per quanto tempo (per fasce di durata). Il codice è conservato nella memoria di sessione del browser, non in un cookie, e si cancella quando chiude la scheda; sul server viene cancellato entro 6 minuti dall'ultimo segnale e restano solo conteggi per giorno, app, social e fascia di durata. L'indirizzo IP serve solo a proteggere il servizio dagli abusi: resta nella memoria temporanea del server per pochi minuti e non viene salvato (come per qualsiasi pagina, Vercel, che ospita il sito, lo vede nei suoi registri tecnici). Base giuridica: legittimo interesse a misurare in forma aggregata l'uso delle versioni web (art. 6, par. 1, lett. f, GDPR); poiché il codice serve solo alle nostre statistiche aggregate, secondo le Linee guida del Garante su cookie e altri strumenti di tracciamento (10 giugno 2021) non è necessario il consenso previsto dall'art. 122 del Codice privacy. Maggiori dettagli nell'<a href="https://marketplace-apps.com/it/privacy">informativa di marketplace-apps.com</a> (punti 3.2 bis e 4).</p>
 
     <p class="muted">
       Nessuna registrazione, nessun account, nessun accesso ai suoi contatti, alla fotocamera o
