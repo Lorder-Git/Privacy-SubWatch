@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy — SubWatch</title>
+<title>Informativa sulla privacy di SubWatch</title>
 <style>
   :root{
     --petrol:#1B4D5C;
@@ -97,8 +97,8 @@
 <body>
 
 <header>
-  <h1>Privacy Policy — SubWatch</h1>
-  <p>Ultimo aggiornamento: 22/11/2026 · Versione 2.2 (app SubWatch 2.3.1)</p>
+  <h1>Informativa sulla privacy di SubWatch</h1>
+  <p>Versione 2.3 — aggiornata il 24/11/2026</p>
 </header>
 
 <main>
@@ -106,260 +106,109 @@
   <section>
     <span class="badge">In breve</span>
     <div class="box">
-      <p>
-        SubWatch funziona quasi interamente sul suo dispositivo. I dati che inserisce —
-        abbonamenti, costi, cicli di rinnovo, categorie, date di utilizzo e note — <strong>non
-        vengono mai inviati a nessun server</strong> e restano solo nella memoria locale
-        dell'app. La connessione serve solo per <strong>controllare gli aggiornamenti</strong> e,
-        se acquista Premium, per <strong>attivarlo e rinnovarlo</strong>: l'app invia la chiave e
-        un'impronta del telefono ricavata con un hash, mai i suoi abbonamenti (sezione 2).
-      </p>
+      <p>SubWatch funziona sul suo telefono. Gli abbonamenti che inserisce restano lì: non li vendiamo e non li usiamo per pubblicità. Non serve un account e il servizio è protetto: connessioni cifrate, nessuna pubblicità, nessun tracciamento. Proteggiamo i suoi diritti secondo il Regolamento europeo sulla protezione dei dati (GDPR) e siamo lieti di aiutarla: ci scriva quando vuole.</p>
     </div>
   </section>
 
   <section>
-    <h2>1. Titolare del trattamento</h2>
-    <p>
-      Hubert Montero, sviluppatore indipendente.<br>
-      Contatto: <a href="mailto:premium@marketplace-apps.com">premium@marketplace-apps.com</a>
-    </p>
+    <h2>1. Chi è il titolare</h2>
+    <p>Hubert Montero, sviluppatore indipendente — marketplace-apps.com<br>Email: <a href="mailto:premium@marketplace-apps.com">premium@marketplace-apps.com</a></p>
   </section>
 
   <section>
-    <h2>2. Quali dati tratta l'app</h2>
-
-    <h3>Abbonamenti che inserisce</h3>
-    <p>
-      Nome dell'abbonamento, costo, ciclo di rinnovo, categoria, data del prossimo rinnovo,
-      data dell'ultimo utilizzo segnalato, preferenze di notifica e note facoltative. Tutto
-      resta esclusivamente sul dispositivo, in un database locale non accessibile da altre app.
-    </p>
-
-    <h3>Statistiche e suggerimenti di risparmio</h3>
-    <p>
-      Il calcolo della spesa mensile/annuale, la stima della spesa negli ultimi 12 mesi e i
-      suggerimenti di risparmio sono generati interamente sul dispositivo, tramite regole
-      interne all'app applicate ai dati che ha inserito. Nessuna intelligenza artificiale,
-      nessuna chiamata a server esterni per questa funzione.
-    </p>
-
-    <h3>Notifiche</h3>
-    <p>
-      Gli avvisi prima dei rinnovi sono notifiche locali, programmate e mostrate dal suo telefono: non passano da nessun server, né nostro né di Google.
-    </p>
-
-    <h3>Controllo aggiornamenti</h3>
-    <p>
-      All'avvio, SubWatch controlla, collegandosi ai nostri server, se c'è una nuova versione e, se c'è, scarica il pacchetto dai server del nostro fornitore di archiviazione (Cloudflare).
-      È Lei a confermare l'installazione. Queste richieste non includono nessun dato inserito
-      nell'app né identificativi del telefono o della licenza.
-    </p>
-    <p>
-      Il sito non salva l'indirizzo IP né altri dati di queste richieste: tiene solo numeri per giorno, cioè quante volte le app hanno chiesto la versione (sono aperture, non persone) e quanti aggiornamenti sono stati scaricati, per app e versione. Da questi numeri non si può risalire a nessuno. Anche dal server delle licenze ricaviamo solo numeri complessivi per app (per esempio quante attivazioni e quante vendite), senza vedere impronte, chiavi o email. Come per ogni pagina web, i fornitori dell'infrastruttura (Vercel per il sito, Cloudflare per i file) ricevono l'indirizzo IP, il tipo di client (User-Agent) e l'orario della richiesta e li tengono nei loro registri tecnici per i tempi previsti dai loro servizi.
-    </p>
-
-    <h3>Attivazione di Premium sul telefono</h3>
-    <p>
-      La chiave Premium vale al massimo su <strong>2 telefoni</strong>. Per far rispettare questo
-      limite, quando attiva la chiave l'app si collega al nostro server delle licenze
-      (un servizio su Cloudflare gestito da noi) e invia: la <strong>chiave di licenza</strong>, che al suo interno contiene l'indirizzo
-      email dell'acquirente, il piano e la data di scadenza; un'<strong>impronta del
-      telefono</strong>, cioè un codice ricavato con una funzione di hash dal nome
-      dell'app e dall'identificativo Android del telefono, poi accorciato.
-      <strong>L'identificativo Android non viene mai inviato in chiaro</strong> e l'impronta è
-      diversa per ogni app.
-    </p>
-    <p>
-      La richiesta si ripete in automatico quando l'attivazione va rinnovata, al massimo ogni
-      30 giorni e solo con il telefono connesso. Il server risponde con un'attivazione firmata
-      che l'app verifica sul telefono, anche senza connessione. Il server <strong>non conserva la sua email</strong> né la chiave in chiaro: conserva solo l'hash della chiave, l'impronta del
-      telefono, il piano, la data di attivazione e dell'ultimo rinnovo, l'eventuale data
-      dell'ultimo cambio di telefono (uno ogni 30 giorni) e l'hash delle chiavi bloccate
-      (per esempio dopo un rimborso). La prova gratuita si può attivare una sola volta per
-      telefono. Il pulsante <strong>Disattiva su questo telefono</strong> cancella dal server la
-      riga di quel telefono. L'identificativo Android si legge solo per questo e non è usato
-      per pubblicità, statistiche o profilazione.
-    </p>
-
-    <h3>Versione web</h3>
-    <p>
-      SubWatch si può usare anche dal browser (<code>marketplace-apps.com/subwatch/web</code>).
-      Lì i dati restano <strong>solo nel browser che usa</strong>, non sui nostri server; non ci sono
-      notifiche né aggiornamenti. Un cookie tecnico ricorda che ha letto l'avviso iniziale. Se attiva Premium, la chiave si verifica sul server del marketplace, che apre una
-      <strong>sessione Premium</strong> legata al browser con un cookie tecnico: il server conserva l'hash del codice di sessione, l'hash della
-      chiave, il piano, la scadenza, l'email contenuta nella chiave e la data in cui la sessione è stata aperta.
-      Massimo <strong>2 sessioni</strong> per chiave: aprendone una terza, la più vecchia viene chiusa e cancellata.
-    </p>
-    <p><strong>Sessione web e recesso.</strong> La data in cui la sessione viene aperta serve anche come prova di quando ha iniziato a usare Premium: se al pagamento ha chiesto di iniziare subito e poi recede entro 14 giorni, tratteniamo solo la parte proporzionale ai giorni trascorsi dall'attivazione (art. 57, comma 3, del Codice del consumo e condizioni di vendita di marketplace-apps.com), e come attivazione nella versione web contiamo la sessione più vecchia che risulta per quella chiave. L'email contenuta nella chiave ci permette di collegare la sessione al suo acquisto. Base giuridica: esecuzione del contratto (art. 6, par. 1, lett. b, GDPR) e legittimo interesse a poter dimostrare quanta parte del servizio è stata fornita (art. 6, par. 1, lett. f). Le sessioni si cancellano 30 giorni dopo la scadenza della licenza (quelle senza scadenza dopo 400 giorni) e subito se la chiave viene bloccata dopo un rimborso per recesso.</p>
-    <p><strong>Conteggio del tempo d'uso.</strong> Mentre la versione web è aperta e la scheda è in primo piano, il browser invia al sito, a intervalli regolari, un segnale con il nome dell'app, l'etichetta del link social che ha usato per arrivare (se c'è) e un codice casuale creato per quella scheda; quando la scheda non è più visibile, il browser invia un ultimo segnale di pausa. Il segnale non contiene nulla di ciò che fa o scrive nell'app e serve solo a contare quante persone usano la versione web in quel momento e per quanto tempo (per fasce di durata). Il codice è conservato nella memoria di sessione del browser, non in un cookie, e si cancella quando chiude la scheda; sul server viene cancellato entro 6 minuti dall'ultimo segnale e restano solo conteggi per giorno, app, social e fascia di durata. L'indirizzo IP serve solo a proteggere il servizio dagli abusi: resta nella memoria temporanea del server per pochi minuti e non viene salvato (come per qualsiasi pagina, Vercel, che ospita il sito, lo vede nei suoi registri tecnici). Base giuridica: legittimo interesse a misurare in forma aggregata l'uso delle versioni web (art. 6, par. 1, lett. f, GDPR); poiché il codice serve solo alle nostre statistiche aggregate, secondo le Linee guida del Garante su cookie e altri strumenti di tracciamento (10 giugno 2021) non è necessario il consenso previsto dall'art. 122 del Codice privacy. Maggiori dettagli nell'<a href="https://marketplace-apps.com/it/privacy">informativa di marketplace-apps.com</a> (punti 3.2 bis e 4).</p>
-
-    <p class="muted">
-      Nessuna registrazione, nessun account, nessun accesso ai suoi contatti, alla fotocamera o
-      alla posizione è richiesto per usare l'app.
-    </p>
+    <h2>2. Dove restano i suoi dati</h2>
+    <p>Gli abbonamenti che inserisce (nome, costo, ciclo di rinnovo, categoria, data del prossimo rinnovo, data dell'ultimo utilizzo, avvisi e note) sono salvati <strong>solo sul suo telefono</strong>, nella memoria riservata all'app. Anche i totali di spesa e i suggerimenti di risparmio sono calcolati sul telefono. Non esiste una copia altrove: noi non possiamo leggerli né recuperarli.</p>
   </section>
 
   <section>
-    <h2>3. Base giuridica e finalità del trattamento</h2>
+    <h2>3. Quando l'app usa internet</h2>
+    <p>L'app si collega a internet solo per queste funzioni:</p>
+    <ul>
+      <li><strong>Aggiornamenti</strong>: l'app controlla se c'è una versione nuova e, se c'è, la scarica dal sito; non invia i suoi abbonamenti né la sua email. Come per ogni collegamento a internet, i fornitori vedono l'indirizzo IP del telefono; noi non lo salviamo.</li>
+      <li><strong>Acquisto di Premium</strong>: il pagamento avviene su PayPal. Riceviamo la sua email e i dati dell'ordine per inviarle la chiave e per gli obblighi fiscali.</li>
+      <li><strong>Attivazione di Premium</strong>: l'app invia la chiave (che contiene l'email usata per l'acquisto) e un codice del telefono creato dall'app (non contiene il suo nome né il suo numero), per controllare che la chiave sia valida e usata sui dispositivi consentiti. Mai i suoi abbonamenti.</li>
+      <li><strong>Versione web</strong>: gli abbonamenti restano nel suo browser. Usiamo solo cookie tecnici, necessari alla versione web: non serve il suo consenso. Nessun cookie di pubblicità o di profilazione. Il sito conta in forma aggregata quanto resta aperta la versione web, senza cookie e senza identificarla.</li>
+      <li><strong>Promemoria</strong>: le notifiche sono create sul telefono; non passa niente da internet.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>4. Cosa SubWatch non fa</h2>
+    <ul>
+      <li>Non ha account né registrazione.</li>
+      <li>Non mostra pubblicità e non fa profilazione.</li>
+      <li>Non usa strumenti di tracciamento o di statistica di terzi.</li>
+      <li>Non vende e non cede i suoi dati a nessuno.</li>
+      <li>Non legge contatti, messaggi, posizione o altre app, e non si collega ai suoi conti.</li>
+      <li>Non prende decisioni basate solo su un trattamento automatico che abbiano effetti giuridici su di Lei o che la riguardino in modo simile (art. 22 GDPR).</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>5. Perché trattiamo i pochi dati che riceviamo</h2>
     <table>
-      <tr><th>Finalità</th><th>Base giuridica</th></tr>
-      <tr>
-        <td>Far funzionare l'app (abbonamenti, statistiche, notifiche,
-        suggerimenti)</td>
-        <td>Esecuzione del servizio richiesto dall'utente (art. 6.1.b GDPR)</td>
-      </tr>
-      <tr>
-        <td>Generare e inviare la chiave Premium dopo il pagamento; attivare Premium sul
-        telefono e far rispettare il limite di 2 telefoni (o 2 sessioni web) per chiave</td>
-        <td>Esecuzione del contratto (art. 6.1.b GDPR)</td>
-      </tr>
-      <tr>
-        <td>Conservare la data delle sessioni web come prova dell'inizio dell'uso, per calcolare l'eventuale rimborso proporzionale in caso di recesso entro 14 giorni (sezione 2, «Versione web»)</td>
-        <td>Esecuzione del contratto (art. 6.1.b) e legittimo interesse a poter dimostrare quanta parte del servizio è stata fornita (art. 6.1.f)</td>
-      </tr>
-      <tr>
-        <td>Conteggio del tempo d'uso della versione web: contare in forma aggregata quante persone la usano e per quanto tempo (sezione 2, «Versione web»)</td>
-        <td>Legittimo interesse (art. 6.1.f) a misurare in forma aggregata l'uso della versione web. Può opporsi (sezione 8)</td>
-      </tr>
-      <tr>
-        <td>Impedire gli abusi: una prova per telefono, un cambio di telefono ogni 30 giorni,
-        blocco delle chiavi revocate</td>
-        <td>Legittimo interesse a prevenire usi fraudolenti delle licenze, usando solo hash e
-        date (art. 6.1.f GDPR). Può opporsi (sezione 8)</td>
-      </tr>
-      <tr>
-        <td>Controllo automatico degli aggiornamenti</td>
-        <td>Legittimo interesse a mantenere l'app sicura e funzionante
-        (art. 6.1.f GDPR); dai registri tecnici dei fornitori (IP, tipo di client, orario)
-        il sito ricava solo numeri per giorno senza identificativi</td>
-      </tr>
+      <tr><th>Dati</th><th>Perché</th><th>Base giuridica</th></tr>
+      <tr><td>Email e ordine</td><td>inviarle la chiave e rispettare gli obblighi fiscali</td><td>contratto e obbligo di legge (art. 6.1 b e c GDPR)</td></tr>
+      <tr><td>Chiave e codice del telefono</td><td>attivare Premium e proteggerlo da usi non consentiti</td><td>contratto e legittimo interesse (art. 6.1 b e f)</td></tr>
+      <tr><td>Indirizzo IP e dati tecnici del collegamento</td><td>far funzionare e proteggere il servizio</td><td>legittimo interesse (art. 6.1 f)</td></tr>
+      <tr><td>Email della chiave e data di inizio d'uso sul web</td><td>dimostrare da quando usa Premium in caso di recesso</td><td>contratto e legittimo interesse (art. 6.1 b e f)</td></tr>
+      <tr><td>Messaggi e richieste che ci scrive</td><td>risponderle</td><td>contratto, se riguarda l'acquisto; altrimenti legittimo interesse a rispondere a chi ci scrive (art. 6.1 b e f)</td></tr>
+      <tr><td>Gli stessi messaggi, dopo la risposta</td><td>poter dimostrare quanto ci siamo detti in caso di contestazione</td><td>legittimo interesse a tutelarci (art. 6.1 f)</td></tr>
     </table>
+    <p>Darci questi dati è facoltativo. Senza l'email d'acquisto non possiamo inviarle la chiave; senza la chiave e il codice del telefono Premium non si attiva. Le funzioni gratuite si usano senza inviarci i suoi abbonamenti.</p>
   </section>
 
   <section>
-    <h2>4. Per quanto tempo restano i dati</h2>
-    <p>
-      I dati inseriti restano sul dispositivo finché non li elimina manualmente dall'app o non disinstalla l'app stessa. SubWatch non prevede, in questa versione, un backup automatico
-      su cloud: la responsabilità di conservare o esportare i propri dati resta dell'utente.
-    </p>
-    <p>
-      Sul server delle licenze: le attivazioni Premium restano finché la licenza è in uso e si
-      cancellano subito con <strong>Disattiva su questo telefono</strong>, o comunque dopo 90 giorni
-      senza rinnovo; le attivazioni della prova gratuita 12 mesi; la data dell'ultimo cambio di
-      telefono 60 giorni; gli hash delle chiavi bloccate finché servono.
-    </p>
-    <p>
-      Sessioni Premium della versione web (sul database del marketplace, con l'email contenuta nella chiave e la data di apertura):
-      fino alla scadenza della licenza o finché non vengono chiuse da una più recente; si cancellano 30 giorni dopo la scadenza
-      della licenza (quelle senza scadenza dopo 400 giorni) e subito se la chiave viene bloccata dopo un rimborso per recesso.
-    </p>
-    <p>
-      Numeri giornalieri di aperture e aggiornamenti (per app e versione, senza IP né identificativi): non sono dati personali; restano finché servono a capire quanto sono usate le app.
-    </p>
+    <h2>6. Per quanto tempo</h2>
+    <ul>
+      <li>Abbonamenti sul telefono: finché non li cancella o disinstalla l'app.</li>
+      <li>Attivazioni: finché la licenza è in uso; cancellate entro 90 giorni dall'ultimo utilizzo (prova gratuita: 12 mesi).</li>
+      <li>Sessione della versione web: fino alla scadenza della licenza, poi cancellata entro 30 giorni.</li>
+      <li>Registrazione dell'ordine per inviarle la chiave: 90 giorni.</li>
+      <li>Dati della vendita: restano nel conto PayPal del venditore per 10 anni, come richiesto dalle norme sulla conservazione dei documenti fiscali (art. 2220 codice civile).</li>
+      <li>Indirizzo IP: noi non lo salviamo; i fornitori lo tengono per il breve tempo previsto dai loro servizi.</li>
+      <li>Messaggi e richieste: se ha acquistato, li conserviamo per 1 anno (licenza mensile), 3 anni (annuale) o 5 anni (triennale) dall'ultimo messaggio, e comunque non oltre 26 mesi dalla scadenza della licenza se questa data viene prima: è il tempo in cui potrebbe nascere una contestazione sulla licenza. Se non ha acquistato, 12 mesi dall'ultimo messaggio, per seguire eventuali richieste successive. Se è in corso una contestazione, li conserviamo fino alla sua conclusione. Le richieste sui suoi diritti e le nostre risposte seguono gli stessi tempi.</li>
+    </ul>
   </section>
 
   <section>
-    <h2>5. Destinatari e trasferimenti</h2>
-    <p>
-      Nessun dato inserito nell'app viene condiviso con terzi. Per Premium e gli aggiornamenti
-      ci serviamo di fornitori che trattano i dati per nostro conto (art. 28 GDPR):
-      <strong>Cloudflare</strong> (Stati Uniti: server delle licenze, database delle attivazioni,
-      file degli aggiornamenti), <strong>Vercel</strong> (Stati Uniti: sito marketplace-apps.com, compreso il
-      passaggio del download degli aggiornamenti, e versione web), <strong>Supabase</strong> (database nell'Unione europea, Irlanda: sessioni
-      Premium web), <strong>Resend</strong> (Stati Uniti: email con la chiave). PayPal (Europe)
-      S.à r.l. et Cie, S.C.A. (Lussemburgo) gestisce il pagamento come titolare autonomo.
-      Quando i dati sono trattati fuori dall'Unione europea, il trasferimento si basa sulla
-      decisione di adeguatezza per le aziende aderenti all'EU-U.S. Data Privacy Framework
-      (decisione di esecuzione (UE) 2023/1795, art. 45 GDPR) oppure sulle clausole contrattuali
-      tipo (art. 46 GDPR), come indicato da ciascun fornitore.
-    </p>
-  </section>
-
-  <section>
-    <h2>6. Distribuzione</h2>
-    <p>
-      SubWatch è distribuita esclusivamente tramite
-      <a href="https://marketplace-apps.com" target="_blank" rel="noopener">marketplace-apps.com</a>,
-      non tramite Google Play o altri store. L'avviso Android "fonte sconosciuta" che potrebbe vedere durante l'installazione è normale per qualunque app installata fuori da Google Play
-      e non indica di per sé un problema di sicurezza.
-    </p>
-  </section>
-
-  <section>
-    <h2>7. Pagamento del piano Premium</h2>
-    <p>
-      L'acquisto del piano Premium avviene tramite PayPal sul sito
-      <a href="https://marketplace-apps.com/subwatch/premium" target="_blank" rel="noopener">marketplace-apps.com/subwatch/premium</a>,
-      aperto dall'app nel suo browser. Non gestiamo né memorizziamo i dati della sua carta o del suo conto: PayPal tratta quei dati secondo la propria informativa privacy. A seguito del
-      pagamento riceverà via email una chiave di attivazione: quando la incolla, l'app ne
-      controlla la firma sul telefono e poi la attiva sul server delle licenze come descritto
-      nella sezione 2.
-    </p>
+    <h2>7. A chi arrivano i dati</h2>
+    <p>Non diamo i suoi dati a nessuno per scopi propri.</p>
+    <ul>
+      <li><strong>Fornitori di servizi informatici che trattano i dati per nostro conto</strong> (art. 28 GDPR): Cloudflare (Stati Uniti), Vercel (Stati Uniti), Supabase (società con sede a Singapore; dati conservati nell'Unione europea), Resend (Stati Uniti).</li>
+      <li><strong>Titolari autonomi</strong>, ciascuno con la propria informativa: PayPal.</li>
+    </ul>
+    <p><strong>Trasferimenti fuori dall'Unione europea</strong>: Cloudflare, Vercel e Resend aderiscono al quadro UE-USA sulla protezione dei dati (Data Privacy Framework), riconosciuto adeguato dalla Commissione europea; per Supabase valgono le clausole contrattuali standard approvate dalla Commissione europea. Può chiederci copia delle garanzie a <a href="mailto:premium@marketplace-apps.com">premium@marketplace-apps.com</a>.</p>
   </section>
 
   <section>
     <h2>8. I suoi diritti</h2>
-    <table>
-      <tr><th>Diritto</th><th>Come esercitarlo</th></tr>
-      <tr>
-        <td>Accesso e correzione</td>
-        <td>Direttamente nell'app: può modificare ogni abbonamento in qualsiasi momento</td>
-      </tr>
-      <tr>
-        <td>Cancellazione</td>
-        <td>Elimini il singolo abbonamento dall'app o disinstalli l'app per rimuovere tutti i
-        dati locali</td>
-      </tr>
-      <tr>
-        <td>Portabilità e altre richieste</td>
-        <td>Scriva a <a href="mailto:premium@marketplace-apps.com">premium@marketplace-apps.com</a>
-        — risposta entro 30 giorni (art. 12 GDPR)</td>
-      </tr>
-    </table>
+    <p>Il GDPR le garantisce di poter accedere ai suoi dati, correggerli, cancellarli, limitarne l'uso, opporsi e riceverli in un formato leggibile.</p>
+    <ul>
+      <li>Per gli abbonamenti sul telefono lo fa <strong>direttamente dall'app</strong>: li vede e li modifica tutti; li elimina uno per uno aprendo l'abbonamento e toccando «Elimina abbonamento» (l'icona del cestino), oppure disinstalla l'app. SubWatch non ha una funzione per esportare i dati in un file. Per togliere l'attivazione di Premium: Impostazioni → Piano Premium attivo → Disattiva su questo telefono.</li>
+      <li>Nella versione web gli abbonamenti restano nel suo browser: li cancella eliminando i dati del sito dalle impostazioni del browser.</li>
+      <li>Per i pochi dati che riceviamo noi, ci scriva a <a href="mailto:premium@marketplace-apps.com">premium@marketplace-apps.com</a>: le rispondiamo entro un mese. Per trovarli più in fretta può indicarci la chiave di licenza o scriverci dall'email dell'acquisto.</li>
+      <li>Può revocare in qualsiasi momento un consenso dato, senza conseguenze su quanto fatto prima.</li>
+      <li>Se ritiene che i suoi diritti non siano rispettati, può presentare reclamo al Garante per la protezione dei dati personali (garanteprivacy.it).</li>
+    </ul>
+    <p><strong>Diritto di opposizione.</strong> Quando trattiamo dati per un nostro legittimo interesse (proteggere le licenze, tenere sicuro il servizio), può opporsi quando vuole scrivendo a <a href="mailto:premium@marketplace-apps.com">premium@marketplace-apps.com</a>. Smettiamo, salvo motivi legittimi prevalenti che le spiegheremo.</p>
   </section>
 
   <section>
     <h2>9. Sicurezza</h2>
-    <p>
-      I dati sono conservati nella memoria dell'app, isolata dal sistema operativo Android dalle
-      altre applicazioni installate. Sui dispositivi Android moderni con blocco schermo attivo,
-      la memoria dell'app beneficia inoltre della cifratura a livello di sistema operativo.
-    </p>
+    <p>I dati sul telefono stanno nella memoria riservata all'app, protetta dal sistema operativo. Le comunicazioni con i nostri servizi sono cifrate. Le consigliamo di tenere attivo il blocco schermo e aggiornato il telefono.</p>
   </section>
 
   <section>
     <h2>10. Minori</h2>
-    <p>
-      SubWatch non è indirizzata a un pubblico di minori e non raccoglie consapevolmente dati di
-      minori di 16 anni.
-    </p>
+    <p>SubWatch è destinata a persone maggiorenni (18 anni) e non raccoglie consapevolmente dati di minori.</p>
   </section>
 
   <section>
-    <h2>11. SubWatch non è un servizio di consulenza finanziaria</h2>
-    <p>
-      I totali di spesa, la stima della spesa negli ultimi 12 mesi e i suggerimenti di risparmio
-      mostrati nell'app sono generati da regole automatiche applicate ai dati che inserisce (ad
-      esempio: abbonamenti non utilizzati da tempo, confronto indicativo tra piano mensile e
-      annuale). Non costituiscono un consiglio finanziario professionale né un'analisi
-      personalizzata da parte di un consulente umano: restano una stima basata solo su quanto ha inserito Lei nell'app.
-    </p>
-  </section>
-
-  <section>
-    <h2>12. Modifiche a questa informativa</h2>
-    <p>
-      Questa informativa può essere aggiornata in futuro, ad esempio in caso di nuove
-      funzionalità dell'app. La versione più recente è sempre disponibile a questo indirizzo.
-    </p>
-  </section>
-
-  <section>
-    <h2>13. Contatti</h2>
-    <p>
-      Per qualsiasi domanda su questa informativa o sui suoi dati:
-      <a href="mailto:premium@marketplace-apps.com">premium@marketplace-apps.com</a>
-    </p>
+    <h2>11. Avvertenza</h2>
+    <p>I totali e i suggerimenti di risparmio di SubWatch sono stime automatiche basate sui dati che inserisce Lei: non sono consulenza finanziaria. Prima di disdire o cambiare un abbonamento, verifichi le condizioni con il fornitore.</p>
+    <h2>12. Modifiche</h2>
+    <p>Se questa informativa cambia, la nuova versione è pubblicata qui con la data.</p>
   </section>
 
 </main>
